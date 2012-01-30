@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  season: 1
+  station: 1
+  url: MyString
+  url_text: MyString
+
+two:
+  season: 1
+  station: 1
+  url: MyString
+  url_text: MyString

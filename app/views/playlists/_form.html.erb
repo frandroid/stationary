@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :season %><br />
-    <%= f.text_field :season %>
+    <%= f.label :season_id %><br />
+	 <%= f.select :season_id, Season.find(:all).collect {|s| [s.name, s.id] } %>
   </div>
   <div class="field">
-    <%= f.label :station %><br />
-    <%= f.text_field :station %>
+    <%= f.label :station_id %><br />
+    <%= f.select :station_id, Station.find(:all).collect {|s| [s.name, s.id]} %>
   </div>
   <div class="field">
     <%= f.label :url %><br />

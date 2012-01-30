@@ -3,6 +3,7 @@ class StationsController < ApplicationController
   # GET /stations.xml
   def index
     @stations = Station.all
+    @newstation = Station.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +15,6 @@ class StationsController < ApplicationController
   # GET /stations/1.xml
   def show
     @station = Station.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @station }
@@ -42,14 +42,11 @@ class StationsController < ApplicationController
   def create
     @station = Station.new(params[:station])
 
-    respond_to do |format|
-      if @station.save
-        format.html { redirect_to(@station, :notice => 'Station was successfully created.') }
-        format.xml  { render :xml => @station, :status => :created, :location => @station }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @station.errors, :status => :unprocessable_entity }
-      end
+    if @station.save
+       redirect_to stations_path
+    else
+       flash[:error] = "Couldn't save station"
+       redirect_to stations_path 
     end
   end
 

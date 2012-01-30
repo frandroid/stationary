@@ -1,6 +1,6 @@
 class Playlist < ActiveRecord::Base
    belongs_to :season
    belongs_to :station
-   has_many :songs
-
+   has_many :songs, :dependent => :destroy
+   
 end

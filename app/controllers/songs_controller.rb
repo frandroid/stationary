@@ -26,10 +26,10 @@ class SongsController < ApplicationController
   def new
     @song = Song.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @song }
-    end
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.xml  { render :xml => @song }
+    # end
   end
 
   # GET /songs/1/edit
@@ -41,17 +41,25 @@ class SongsController < ApplicationController
   # POST /songs.xml
   def create
     @song = Song.new(params[:song])
-
-    respond_to do |format|
-      if @song.save
-        format.html { redirect_to(@song, :notice => 'Song was successfully created.') }
-        format.xml  { render :xml => @song, :status => :created, :location => @song }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @song.errors, :status => :unprocessable_entity }
-      end
+    if @song.save
+       redirect_to playlist_path(@song.playlist)
+    else
+       flash[:error] = "Couldn't save song"
+       redirect_to playlist(@song.playlist)
     end
   end
+       
+
+    # respond_to do |format|
+    #   if @song.save
+    #     format.html { redirect_to(@song, :notice => 'Song was successfully created.') }
+    #     format.xml  { render :xml => @song, :status => :created, :location => @song }
+    #   else
+    #     format.html { render :action => "new" }
+    #     format.xml  { render :xml => @song.errors, :status => :unprocessable_entity }
+    #   end
+    # end
+    # end
 
   # PUT /songs/1
   # PUT /songs/1.xml

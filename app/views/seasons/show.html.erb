@@ -5,6 +5,14 @@
   <%= @season.name %>
 </p>
 
+	<table>
+		<% @stations.each do |station| %>
+			<li>
+			<%= link_to station.name, playlist_path(Playlist.find_or_create_by_station_id_and_season_id(station.id, @season)) %>
+			</li>
+	   <% end %>
+   </table>
 
-<%= link_to 'Edit', edit_season_path(@season) %> |
+<p>&nbsp;</p>
+<%= link_to 'Edit Season', edit_season_path(@season) %> |
 <%= link_to 'Back', seasons_path %>

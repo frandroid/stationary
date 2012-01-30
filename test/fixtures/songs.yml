@@ -4,10 +4,12 @@ one:
   title: MyString
   artist: MyString
   url: MyString
-  playlist: 1
+  rank: 1
+  playlist_id: 1
 
 two:
   title: MyString
   artist: MyString
   url: MyString
-  playlist: 1
+  rank: 1
+  playlist_id: 1

@@ -1,0 +1,382 @@
+/* rough percentages equavilants - please test and update as dev progresses
+167%= 20px verdana
+117%= 14px verdana
+100%= 12px verdana
+92% = 11px verdana
+92% = 10px Verdana
+*/
+
+body {
+	margin: 0;
+	padding:0;
+	border:0;
+	outline:0;
+	scrollbar-base-color:#000;
+}	
+
+#holder {
+	width:1600px;
+	margin:0 auto;
+	text-align:left;
+	width:1600px;
+	height:422px;
+	background:url("/images/fixedImages/subway_map_white.gif") top left no-repeat;
+	
+}
+
+#holder:hover{cursor:move;}
+
+/* START OF CSS FOR MAP */
+dl.map.on {
+	position:relative;
+	text-align:left;
+	margin:0px;
+	padding:0px;
+	
+}
+dl.map.on dt {
+	list-style:none;
+	display:inline;
+}
+
+dl.map.on dd  {
+	position:absolute;
+	left:-9999px;
+	padding:4px;
+	width:150px;
+	border:#000 3px solid;
+	background:#fff;
+	z-index:11;
+	font-size:92%;
+	color:#000;
+	font-family:verdana, helvetica, sans-serif;
+}
+
+dl.map.on dd * {
+	margin-left: 5px;
+	padding-left: 5px;
+}
+dl.map.on dd ul {
+	/*margin-left:-22px;*margin-left:15px;_margin-left:15px;*/
+	margin-left:5px;
+	padding-left:5px;
+	_margin-left:7px;
+	_padding-left:7px;
+}
+dl.map.on dd ul li {font-size:92%;padding-left:0px;}
+
+
+dl.map.on dd.bloor{border:3px solid #2b720a;}
+dl.map.on dd.yus{border:3px solid #ffc41e;}
+dl.map.on dd.scarb-rt{border:3px solid #0e9dd9;}
+dl.map.on dd.sheppard{border:3px solid #b5147b;}
+
+dl.map.on a.location {
+	display:block;
+	position:absolute;
+	text-indent:-9999px;
+	background:none/*url("/WebSite/images/fixedImages/interactive_map.gif") no-repeat 2px 2px*/;
+	width:17px;
+	height:17px;
+	outline:none;
+	z-index:10;
+	text-decoration:none;
+}
+/*
+dl.map.on a.location:hover {
+	background:url('/images/fixedImages/interactive_map_hover.gif') no-repeat top left;
+}
+*/
+
+
+/* START OF CSS FOR MAP POINTS */
+dl.map.on a#kipling {
+	top:253px;
+	left:33px;
+}
+dl.map.on a#islington {
+	top:242px;
+	left:91px;
+}
+dl.map.on a#royal_york {
+	top:242px;
+	left:136px;
+}
+dl.map.on a#old_mill {
+	top:242px;
+	left:185px;
+}
+dl.map.on a#jane {
+	top:242px;
+	left:235px;
+}
+dl.map.on a#runnymede {
+	top:242px;
+	left:285px;
+}
+dl.map.on a#high_park {
+	top:242px;
+	left:334px;
+}
+dl.map.on a#keele {
+	top:242px;
+	left:383px;
+}
+dl.map.on a#dundas_west {
+	top:242px;
+	left:433px;
+}
+dl.map.on a#lansdowne {
+	top:242px;
+	left:482px;
+}
+dl.map.on a#dufferin {
+	top:242px;
+	left:532px;
+}
+dl.map.on a#ossington {
+	top:242px;
+	left:581px;
+}
+dl.map.on a#christie {
+	top:242px;
+	left:631px;
+}
+dl.map.on a#bathurst {
+	top:242px;
+	left:680px;
+}
+dl.map.on a#spadina {
+	top:242px;
+	left:730px;
+}
+dl.map.on a#st_george, dl.map.on a#st_george_yus {
+	top:236px;
+	left:761px;
+}
+dl.map.on a#bay {
+	top:242px;
+	left:809px;
+}
+dl.map.on a#bloor_yonge, dl.map.on a#bloor_yonge_yus {
+	top:242px;
+	left:857px;
+}
+dl.map.on a#sherbourne {
+	top:242px;
+	left:907px;
+}
+dl.map.on a#castle_frank {
+	top:242px;
+	left:956px;
+}
+dl.map.on a#broadview {
+	top:242px;
+	left:1006px;
+}
+dl.map.on a#chester {
+	top:242px;
+	left:1055px;
+}
+dl.map.on a#pape {
+	top:242px;
+	left:1105px;
+}
+dl.map.on a#donlands {
+	top:242px;
+	left:1154px;
+}
+dl.map.on a#greenwood {
+	top:242px;
+	left:1204px;
+}
+dl.map.on a#coxwell {
+	top:242px;
+	left:1253px;
+}
+dl.map.on a#woodbine {
+	top:242px;
+	left:1303px;
+}
+dl.map.on a#main_street {
+	top:242px;
+	left:1352px;
+}
+dl.map.on a#vic_park {
+	top:229px;
+	left:1382px;
+}
+dl.map.on a#warden {
+	top:205px;
+	left:1406px;
+}
+dl.map.on a#kennedy, dl.map.on a#kennedy_rt {
+	top:186px;
+	left:1426px;
+}
+dl.map.on a#lawrence_east {
+	top:116px;
+	left:1426px;
+}
+dl.map.on a#ellesmere {
+	top:87px;
+	left:1426px;
+}
+dl.map.on a#midland {
+	top:86px;
+	left:1468px;
+}
+dl.map.on a#scarb_centre {
+	top:86px;
+	left:1508px;
+}
+dl.map.on a#mccowan {
+	top:86px;
+	left:1552px;
+}
+dl.map.on a#downsview {
+	top:61px;
+	left:676px;
+}
+dl.map.on a#wilson {
+	top:77px;
+	left:676px;
+}
+dl.map.on a#yorkdale {
+	top:94px;
+	left:676px;
+}
+dl.map.on a#lawrence_west {
+	top:111px;
+	left:676px;
+}
+dl.map.on a#glencairn {
+	top:128px;
+	left:676px;
+}
+dl.map.on a#eglington_west {
+	top:144px;
+	left:676px;
+}
+dl.map.on a#stclair_west {
+	top:177px;
+	left:705px;
+}
+dl.map.on a#dupont {
+	top:206px;
+	left:730px;
+}
+dl.map.on a#spadina_yus {
+	top:230px;
+	left:730px;
+}
+dl.map.on a#museum {
+	top:275px;
+	left:761px;
+}
+dl.map.on a#queens_park {
+	top:298px;
+	left:761px;
+}
+dl.map.on a#stpatrick {
+	top:319px;
+	left:761px;
+}
+dl.map.on a#osgoode {
+	top:342px;
+	left:761px;
+}
+dl.map.on a#standrew {
+	top:363px;
+	left:761px;
+}
+dl.map.on a#union {
+	top:374px;
+	left:809px;
+}
+dl.map.on a#king {
+	top:363px;
+	left:857px;
+}
+dl.map.on a#queen {
+	top:342px;
+	left:857px;
+}
+dl.map.on a#dundas {
+	top:319px;
+	left:857px;
+}
+dl.map.on a#college {
+	top:296px;
+	left:857px;
+}
+dl.map.on a#wellesley {
+	top:273px;
+	left:857px;
+}
+dl.map.on a#rosedale {
+	top:216px;
+	left:857px;
+}
+dl.map.on a#summerhill {
+	top:197px;
+	left:857px;
+}
+dl.map.on a#stclair {
+	top:177px;
+	left:857px;
+}
+dl.map.on a#davisville {
+	top:157px;
+	left:857px;
+}
+dl.map.on a#eglington {
+	top:138px;
+	left:857px;
+}
+dl.map.on a#lawrence {
+	top:111px;
+	left:857px;
+}
+dl.map.on a#york_mills {
+	top:87px;
+	left:857px;
+}
+dl.map.on a#yonge_sheppard, dl.map.on a#yonge_sheppard_sline {
+	top:61px;
+	left:857px;
+}
+dl.map.on a#north_york {
+	top:38px;
+	left:857px;
+}
+dl.map.on a#finch {
+	top:21px;
+	left:857px;
+}
+dl.map.on a#bayview {
+	top:60px;
+	left:965px;
+}
+dl.map.on a#bessarion {
+	top:60px;
+	left:1061px;
+}
+dl.map.on a#leslie {
+	top:60px;
+	left:1157px;
+}
+dl.map.on a#donmills {
+	top:60px;
+	left:1255px;
+}
+
+
+
+.access {display:none;}
+
+.mapdefault{position:absolute;left:1200px;height:1px;width:1px;}
+
+h2 {font-size:117%;line-height:1.4em;font-weight:normal;}
+h3 {font-size:92%;color:#000;margin:0 0 5px 0;font-weight:bold;}
+	

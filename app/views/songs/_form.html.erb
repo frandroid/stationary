@@ -24,8 +24,12 @@
     <%= f.text_field :url %>
   </div>
   <div class="field">
-    <%= f.label :playlist %><br />
-    <%= f.text_field :playlist %>
+    <%= f.label :rank %><br />
+    <%= f.text_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :playlist_id %><br />
+    <%= f.select :playlist_id, Playlist.find(:all).collect {|s| [s.station.name, s.id]} %>
   </div>
   <div class="actions">
     <%= f.submit %>

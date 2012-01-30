@@ -2,24 +2,49 @@
 
 <p>
   <b>Season:</b>
-  <%= @playlist.season %>
+  <%= @playlist.season.name %>
 </p>
 
 <p>
   <b>Station:</b>
-  <%= @playlist.station %>
+  <%= @playlist.station.name %>
 </p>
 
 <p>
-  <b>Url:</b>
-  <%= @playlist.url %>
+  <b>Url:</b> <%= link_to @playlist.url_text, @playlist.url %> 
 </p>
+
+<p><%= link_to 'Edit playlist info', edit_playlist_path(@playlist) %></p>
 
 <p>
-  <b>Url text:</b>
-  <%= @playlist.url_text %>
-</p>
+<table>
+	<% unless @songs.empty? %>
+		<% @songs.each do |song| %>
+			<tr><td><%= song.rank.to_s %>. <%= song.artist + " - " + song.title %></td> 
+			    <td><%= link_to 'Edit song', edit_song_path(song) %> 
+			        <%= link_to 'Delete', song, :confirm => 'Are you sure?', :method => :delete %></td></tr>
+		<% end %>
+	<% end %>
+</table>
 
+<p>&nbsp;</p>
+<p><strong>Enter a new song:</strong></p>
 
-<%= link_to 'Edit', edit_playlist_path(@playlist) %> |
+<table>
+	<tr>
+
+		<td><%= form_for @song do |f| %>
+			 <%= f.label :artist %>
+			 <%= f.text_field :artist, :autofocus => true %>
+			 <%= f.label :title, "Song title" %>
+			 <%= f.text_field :title %>
+			 <%= f.hidden_field :playlist_id, :value => @playlist.id %>
+			 <%= f.hidden_field :rank, :value => (@songs.count + 1) %>
+			 <%= f.submit %> 
+			 <% end %>
+		</td>
+</table>
+
+<p>
 <%= link_to 'Back', playlists_path %>
+</p>

@@ -14,7 +14,8 @@ class SeasonsController < ApplicationController
   # GET /seasons/1.xml
   def show
     @season = Season.find(params[:id])
-
+    @stations = Station.all
+    @playlists = Playlist.find_all_by_season_id(@season)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @season }
@@ -79,5 +80,18 @@ class SeasonsController < ApplicationController
       format.html { redirect_to(seasons_url) }
       format.xml  { head :ok }
     end
+  end    
+  
+  
+  # GET /seasons/1/generate
+  def generate
+     @season = Season.find(params[:id])
+     @stations = Station.all
+     @playlists = Playlist.find_all_by_season_id(@season)
+     respond_to do |format|
+       format.html { render :layout => false }
+     end
+
+     
   end
 end

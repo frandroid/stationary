@@ -1,4 +1,4 @@
 class Station < ActiveRecord::Base
-has_many :playlists
+has_many :playlists, :dependent => :destroy  
 
 end

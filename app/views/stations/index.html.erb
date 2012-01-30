@@ -16,9 +16,21 @@
     <td><%= link_to 'Show', station %></td>
     <td><%= link_to 'Edit', edit_station_path(station) %></td>
     <td><%= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete %></td>
+	 <td><%= link_to 'Generate', station %></td>
   </tr>
 <% end %>
 </table>
+         
+<p>&nbsp;</p>
+
+<%= form_for @newstation do |f| %>
+	<%= f.label :name, "Full station name"%>
+	<%= f.text_field :name, :autofocus => true %><br />
+	<%= f.label :codename, "HTML codename" %>
+	<%= f.text_field :codename %>
+	<%= f.submit %>
+<% end %>
+
 
 <br />
 

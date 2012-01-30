@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130034114) do
+ActiveRecord::Schema.define(:version => 20120130043548) do
 
   create_table "playlists", :force => true do |t|
-    t.integer  "season"
-    t.integer  "station"
+    t.integer  "season_id"
+    t.integer  "station_id"
     t.string   "url"
     t.string   "url_text"
     t.datetime "created_at"
@@ -32,10 +32,13 @@ ActiveRecord::Schema.define(:version => 20120130034114) do
     t.string   "title"
     t.string   "artist"
     t.string   "url"
-    t.integer  "playlist"
+    t.integer  "rank"
+    t.integer  "playlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "songs", ["rank", "playlist_id"], :name => "index_songs_on_rank_and_playlist_id"
 
   create_table "stations", :force => true do |t|
     t.string   "name"

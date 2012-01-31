@@ -19,7 +19,7 @@
     <td><%= playlist.url_text %></td>
     <td><%= link_to 'Show', playlist %></td>
     <td><%= link_to 'Edit', edit_playlist_path(playlist) %></td>
-    <td><%= link_to 'Destroy', playlist, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', playlist, :method => :delete %></td>      <!-- :confirm => 'Are you sure?',  -->
   </tr>
 <% end %>
 </table>

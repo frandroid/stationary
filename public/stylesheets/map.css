@@ -20,7 +20,7 @@ body {
 	text-align:left;
 	width:1600px;
 	height:422px;
-	background:url("/images/fixedImages/subway_map_white.gif") top left no-repeat;
+	background:url("../images/subway_map_white.gif") top left no-repeat;
 	
 }
 
@@ -75,7 +75,7 @@ dl.map.on a.location {
 	display:block;
 	position:absolute;
 	text-indent:-9999px;
-	background:none/*url("/WebSite/images/fixedImages/interactive_map.gif") no-repeat 2px 2px*/;
+	background:none/*url("../images/interactive_map.gif") no-repeat 2px 2px*/;
 	width:17px;
 	height:17px;
 	outline:none;
@@ -84,7 +84,7 @@ dl.map.on a.location {
 }
 /*
 dl.map.on a.location:hover {
-	background:url('/images/fixedImages/interactive_map_hover.gif') no-repeat top left;
+	background:url('../images/interactive_map_hover.gif') no-repeat top left;
 }
 */
 

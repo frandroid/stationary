@@ -67,7 +67,7 @@ var mapMaker = {
 		var i = 0;
 		//highlight station
 		var childanchor = evt.parentNode.getElementsByTagName("a")[0];
-		if(childanchor){childanchor.style.background="url('/images/fixedImages/interactive_map_hover.gif') no-repeat top left";}
+		if(childanchor){childanchor.style.background="url('/images/interactive_map_hover.gif') no-repeat top left";}
 		//Find DD to display - based on currently hovered anchor move to parent DT then next sibling DD
 		var objid = evt.parentNode.nextSibling;
 		mapMaker.element = objid;//set for the hideTooltip

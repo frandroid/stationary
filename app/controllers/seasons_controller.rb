@@ -88,6 +88,7 @@ class SeasonsController < ApplicationController
      @season = Season.find(params[:id])
      @stations = Station.all
      @playlists = Playlist.find_all_by_season_id(@season)
+     
      respond_to do |format|
        format.html { render :layout => false }
      end

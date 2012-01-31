@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>The Stationary Groove - TTC</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag "map" %> 
-  <%= javascript_include_tag :defaults %> 
-  <%= csrf_meta_tag %>
+		  <%= stylesheet_link_tag 'widths', :id => "cssSize" %>
+		  <%= stylesheet_link_tag 'map' %>
+		  <%= javascript_include_tag "map" %> 
+		  <%= csrf_meta_tag %>
 </head>
 
 
@@ -20,23 +20,26 @@
 <h3 class="access">Yonge-University-Spadina Line</h3>
 
 <dl class="map">
+ 
+	<% @playlists.each do |playlist| %>
+		<dt><a id="<%= playlist.station.codename %>" class="location"><%= playlist.station.name %></a></dt>
+		<dd class="yus"><%= playlist.station.name %><br />
+	   <h3>Playlist</h3>
+		<ul>
+			<% Song.find_all_by_playlist_id(playlist).each do |song| %>
+				<li>
+					<%= song.artist + " - " + song.title %>
+				</li>
+			<% end %>
+			<% unless playlist.url.nil? %>
+				<%= link_to(playlist.url_text, playlist.url) %>
+			<% end %>
+	   </ul>
+		</dd>
 
-<% @stations.each do |station| %>
-	<dt><a id="<%= station.codename %>"><%= station.name %></a></dt>
-	<dd class="yus"><%= station.name %><br />
-   <h3>Station features</h3>
-	<ul>
-		<% playlist = @playlists.find_by_station_id(station) %>
-		<% playlist.find_all_by_song_id(:order => rank).each do |song| %>
-			<li>
-				<%= song.artist + " - " + song.title %>
-			</li>
-		<% end %>
-		<%= link_to playlist.url_text, playlist.url %>
-   </ul>
 
-
-<% end %>
+	<% end %>
+	
 
 </dl>
 

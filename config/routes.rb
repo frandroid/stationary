@@ -1,12 +1,12 @@
 Stationary::Application.routes.draw do
   resources :songs
 
-  resources :seasons do
+  resources :seasons  do
       member do
-         get 'generate'
+             get 'generate'
       end
   end
-
+        
   resources :playlists
 
   resources :stations

@@ -8,7 +8,9 @@
 	<table>
 		<% @stations.each do |station| %>
 			<li>
-			<%= link_to station.name, playlist_path(Playlist.find_or_create_by_station_id_and_season_id(station.id, @season)) %>
+			<%= link_to station.name, playlist_path(Playlist.find_or_create_by_station_id_and_season_id(:station_id => station.id, :season_id => @season)) %>
+			<%= station.id.to_s %>
+			<%= @season.id %>
 			</li>
 	   <% end %>
    </table>

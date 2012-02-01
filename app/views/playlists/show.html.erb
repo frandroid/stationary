@@ -20,9 +20,13 @@
 <table>
 	<% unless @songs.empty? %>
 		<% @songs.each do |song| %>
-			<tr><td><%= song.rank.to_s %>. <%= song.artist + " - " + song.title %></td> 
+	 	<tr><td><% unless song.url.blank? %><a href="<%= song.url %>"><% end %>
+				  <%= song.rank.to_s %>. <%= song.artist + " - " + song.title %>
+				  <% unless song.url.blank? %></a><% end %> 
+			    </td>
 			    <td><%= link_to 'Edit song', edit_song_path(song) %> 
-			        <%= link_to 'Delete', song, :confirm => 'Are you sure?', :method => :delete %></td></tr>
+			        <%= link_to 'Delete', song, :confirm => 'Are you sure?', :method => :delete %>
+		   </td></tr>
 		<% end %>
 	<% end %>
 </table>
@@ -32,18 +36,21 @@
 
 <table>
 	<tr>
-
 		<td><%= form_for @song do |f| %>
 			 <%= f.label :artist %>
 			 <%= f.text_field :artist, :autofocus => true %>
 			 <%= f.label :title, "Song title" %>
 			 <%= f.text_field :title %>
+			 <%= f.label :url, "URL" %>
+			 <%= f.text_field :url %>
 			 <%= f.hidden_field :playlist_id, :value => @playlist.id %>
 			 <%= f.hidden_field :rank, :value => (@songs.count + 1) %>
 			 <%= f.submit %> 
 			 <% end %>
 		</td>
 </table>
+
+
 
 <p>
 <%= link_to 'Back', playlists_path %>

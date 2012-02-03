@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: seasons
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'test_helper'
 
 class SeasonTest < ActiveSupport::TestCase

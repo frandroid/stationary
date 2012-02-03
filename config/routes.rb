@@ -1,20 +1,16 @@
 Stationary::Application.routes.draw do
-  get "users/new"
-
   get "pages/home"
   get "pages/contact"
   get "pages/about"
 
+  resources :users
   resources :songs
-
   resources :seasons  do
       member do
              get 'generate'
       end
   end
-        
   resources :playlists
-
   resources :stations
                        
 

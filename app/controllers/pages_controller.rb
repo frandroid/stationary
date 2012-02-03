@@ -1,6 +1,8 @@
-class PagesController < ApplicationController 
+class PagesController < ApplicationController
+  def home
+  end
 
-   def generate
-   end
+  def contact
+  end
 
 end

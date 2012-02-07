@@ -14,7 +14,7 @@ class SeasonsController < ApplicationController
   # GET /seasons/1.xml
   def show
     @season = Season.find(params[:id])
-    @stations = Station.all
+    @stations = Station.order("name").all
     @playlists = Playlist.find_all_by_season_id(@season)
     respond_to do |format|
       format.html # show.html.erb

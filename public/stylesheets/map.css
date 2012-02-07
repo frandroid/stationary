@@ -148,7 +148,7 @@ dl.map.on a#bathurst {
 	left:680px;
 }
 dl.map.on a#spadina {
-	top:242px;
+	top:230px;
 	left:730px;
 }
 dl.map.on a#st_george, dl.map.on a#st_george_yus {
@@ -267,10 +267,10 @@ dl.map.on a#dupont {
 	top:206px;
 	left:730px;
 }
-dl.map.on a#spadina_yus {
+/* dl.map.on a#spadina_yus {
 	top:230px;
 	left:730px;
-}
+} */
 dl.map.on a#museum {
 	top:275px;
 	left:761px;

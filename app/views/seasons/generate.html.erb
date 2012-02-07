@@ -22,7 +22,7 @@
 <dl class="map">
  
 	<% @playlists.each do |playlist| %>
-		<dt><a id="<%= playlist.station.codename %>" class="location"><%= playlist.station.name %></a></dt>
+		<dt><a id="<%= playlist.station.codename %>" href="<%= playlist.url %>" class="location"><%= playlist.station.name %></a></dt>
 		<dd class="yus"><%= playlist.station.name %><br />
 	   <h3>Playlist</h3>
 		<ul>

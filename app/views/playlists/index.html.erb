@@ -13,8 +13,8 @@
 
 <% @playlists.each do |playlist| %>
   <tr>
-    <td><%= playlist.season_id %></td>
-    <td><%= playlist.station_id %></td>
+    <td><%= playlist.season.name %></td>
+    <td><%= playlist.station.name %></td>
     <td><%= playlist.url %></td>
     <td><%= playlist.url_text %></td>
     <td><%= link_to 'Show', playlist %></td>

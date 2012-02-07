@@ -44,7 +44,7 @@ dl.map.on dd  {
 	position:absolute;
 	left:-9999px;
 	padding:8px;
-	/* width:350px; */
+	max-width:400px;
 	border:#000 3px solid;
 	background:#fff;
 	z-index:11;

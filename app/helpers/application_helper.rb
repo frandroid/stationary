@@ -1,6 +1,6 @@
 module ApplicationHelper
    def title
-       @version = 0.3.1
+       @version = "0.3.1"
        base_title = "Stationary Groove editor v<%= @version.to_s %>"
        if @title.nil?
          base_title

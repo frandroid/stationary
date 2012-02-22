@@ -25,16 +25,16 @@
 		<dt><a id="<%= playlist.station.codename %>" 
 			<% unless playlist.url.nil? %> href="<%= playlist.url %>" <% end %>
 			class="location"><%= playlist.station.name %></a></dt>
-		<dd class="yus"><%= playlist.station.name %><br />
-	   <h3>Playlist</h3>
+		<dd class="yus"><h3>Stationary Groove - <%= playlist.station.name %> Station Playlist</h3>
+	   <p><% unless playlist.url_text.nil? %><%= playlist.url_text %><% end %></p>
 		<ul>
 			<% Song.find_all_by_playlist_id(playlist).each do |song| %>
-				<li>
-					<%= song.artist + " - " + song.title %>
-				</li>
+				<li><%= song.artist + " - " + song.title %></li>
 			<% end %>
+	   </ul>
+	   <br />
 			<% unless playlist.url.nil? %>
-				<%= link_to(playlist.url_text, playlist.url) %>
+				<div class="downloadtext">Click the station dot to download this playlist</div>
 			<% end %>
 	   </ul>
 		</dd>

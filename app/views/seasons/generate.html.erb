@@ -26,7 +26,7 @@
 			<% unless playlist.url.nil? %> href="<%= playlist.url %>" <% end %>
 			class="location"><%= playlist.station.name %></a></dt>
 		<dd class="yus"><h3>Stationary Groove - <%= playlist.station.name %> Station Playlist</h3>
-	   <p><% unless playlist.url_text.nil? %><%= playlist.url_text %><% end %></p>
+	   <p class="downloadtext"><% unless playlist.url_text.nil? %><%= playlist.url_text %><% end %></p>
 		<ul>
 			<% Song.find_all_by_playlist_id(playlist).each do |song| %>
 				<li><%= song.artist + " - " + song.title %></li>

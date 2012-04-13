@@ -22,7 +22,7 @@
 <dl class="map">
  
 	<% @playlists.each do |playlist| %>
-		<dt><a id="<%= playlist.station.codename %>"<% unless playlist.url.nil? %> href="<%= playlist.url %>" <% end %> class="location"><%= playlist.station.name %></a></dt>
+		<dt><a id="<%= playlist.station.codename %>"<% unless playlist.url.nil? %> href="<%= playlist.url %>"<% end %> class="location" target="_blank"><%= playlist.station.name %></a></dt>
 		<dd class="yus"><h3>Stationary Groove - <%= playlist.station.name %> Station Playlist</h3>
 	   <p class="downloadtext"><% unless playlist.url_text.nil? %><%= playlist.url_text %><% end %></p>
 		<ul>
@@ -34,7 +34,6 @@
 			<% unless playlist.url.nil? %>
 				<div class="downloadtext">Click the station dot to download this playlist</div>
 			<% end %>
-	   </ul>
 		</dd>
 
 
